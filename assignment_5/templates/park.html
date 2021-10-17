@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block header %}
+  <!-- Header-->
+  <header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+        <h1 class="fw-bolder">Welcome to Manlu's Minisite</h1>
+        <p class="lead">A website with secret links for you to explore!</p>
+        <a class="btn btn-lg btn-light" href="#about">Start exploring!</a>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<!-- Main Content-->
+<div class="container">
+     <div class="row">
+         <div class="col">
+             <b>No.</b>
+        </div>
+        <div class="col">
+            <b>Name</b>
+        </div>
+        <div class="col">
+            <b>Adress</b>        
+         </div> 
+         <div class="col">
+            <b>Sub-district</b>        
+         </div>
+         <div class="col">
+            <b>Open Hour</b>        
+         </div>     
+     </div>
+    {% for row in  entries  %}
+    <div class="row">
+        <div class="col">
+                 {{ row["序号"] }}
+        </div>
+        <div class="col">
+                 {{ row["公园名称"] }}
+        </div>
+        <div class="col">
+                 {{ row["地   址"] }}
+        </div>
+        <div class="col">
+            {{ row["所属街道"] }}
+        </div>
+        <div class="col">
+            {{ row["开园时间"] }}
+        </div>
+    </div><!-- end row -->
+    {% endfor %}
+</div><!-- end container -->
+<hr />
+ </div>
+{% endblock %}
